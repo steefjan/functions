@@ -20,6 +20,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         dt = FromUnixTime(ePochTime);
         log.Info(dt.ToString());
     } 
+    
+    log.Info("Function done");
 
     return dt == null
         ? req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name on the query string or in the request body")
